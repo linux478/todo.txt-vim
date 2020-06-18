@@ -75,7 +75,7 @@ function! todo#txt#remove_completed()
     endif
 
     let l:completed = []
-    :g/^x /call add(l:completed, getline(line(".")))|d
+    :g/^\s*x /call add(l:completed, getline(line(".")))|d
     call s:append_to_file(l:done_file, l:completed)
 endfunction
 
